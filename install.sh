@@ -163,7 +163,7 @@ else
     # source ~/.zshrc
     echo -e "\nSudo access is needed to change default shell\n"
 
-    if chsh -s $(which zsh) && /bin/zsh -i -c 'omz update'; then
+    if $(sudo chsh -s $(which zsh) $(whoami)) && /bin/zsh -i -c 'omz update'; then
         echo -e "Installation complete, exit terminal and enter a new zsh session"
         echo -e "In a new zsh session manually run: build-fzf-tab-module"
     else
