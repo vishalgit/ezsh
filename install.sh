@@ -127,25 +127,6 @@ else
     git clone --depth 1 https://github.com/Aloxaf/fzf-tab ~/.config/ezsh/oh-my-zsh/custom/plugins/fzf-tab
 fi
 
-if [ -d ~/.config/ezsh/marker ]; then
-    cd ~/.config/ezsh/marker && git pull
-else
-    git clone --depth 1 https://github.com/jotyGill/marker ~/.config/ezsh/marker
-fi
-
-if ~/.config/ezsh/marker/install.py; then
-    echo -e "Installed Marker\n"
-else
-    echo -e "Marker Installation Had Issues\n"
-fi
-
-# if git clone --depth 1 https://github.com/todotxt/todo.txt-cli.git ~/.config/ezsh/todo; then :
-# else
-#     cd ~/.config/ezsh/todo && git fetch --all && git reset --hard origin/master
-# fi
-# mkdir ~/.config/ezsh/todo/bin ; cp -f ~/.config/ezsh/todo/todo.sh ~/.config/ezsh/todo/bin/todo.sh # cp todo.sh to ./bin so only it is included in $PATH
-# #touch ~/.todo/config     # needs it, otherwise spits error , yeah a bug in todo
-# ln -s ~/.config/ezsh/todo ~/.todo
 if [ ! -L ~/.config/ezsh/todo/bin/todo.sh ]; then
     echo -e "Installing todo.sh in ~/.config/ezsh/todo\n"
     mkdir -p ~/.config/ezsh/bin
